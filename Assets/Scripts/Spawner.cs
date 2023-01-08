@@ -61,7 +61,7 @@ public class Spawner : MonoBehaviour
             cube.GetComponent<Poyoyoyo>().Element = Element;
             cube.GetComponent<NavMeshAgent>().agentTypeID = NavMeshAgentTypeID;
             cube.transform.parent = GameObject.Find("Poiens").transform;
-            cube.transform.position = transform.position;
+            cube.transform.position = transform.position + (Vector3.up * 4);
             _timer = Random.Range(12, 32);
         }
 

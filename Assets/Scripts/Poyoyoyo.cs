@@ -32,6 +32,8 @@ public class Poyoyoyo : MonoBehaviour
     private bool _splashing;
     private bool _unSplashing;
     private bool _inIncubateur;
+    public bool TryFusion;
+    private bool _first_ground = true;
 
     private void Awake()
     {
@@ -182,57 +184,82 @@ public class Poyoyoyo : MonoBehaviour
         {
             _rb.AddForce(Random.insideUnitSphere * 2 + transform.up * 2, ForceMode.Impulse);
         }
-        if (!Catch && collision.transform.CompareTag("Neutre") && _previousVelocity.y < 0 && gameObject.activeSelf)
+        if (!Catch && collision.transform.CompareTag("Sol") && _previousVelocity.y < 0 && gameObject.activeSelf)
         {
             _agent.enabled = true;
             if (_agentHadPath && _agent.isOnNavMesh)
                 _agent.destination = _agentDestination;
 
-            if (_previousVelocity.y < -.5f)
+            if (_previousVelocity.y < 0)
             {
+                if (_first_ground)
+                {
+                    _first_ground = false;
+                    GetComponent<SlimeDeplacement>().enabled = true;
+                    GetComponent<NavMeshAgent>().enabled = true;
+                }
                 StartCoroutine(Splash());
                 return;
             }
 
         }
 
-        if (Catch && (collision.gameObject.layer == 13))
-        {
-            switch (Element)
-            {
-                case TYPE.Fire:
-                    collision.gameObject.layer = 9;
-                    collision.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
-                    break;
-                case TYPE.Water:
-                    collision.gameObject.layer = 10;
-                    collision.gameObject.GetComponent<MeshRenderer>().material.color = Color.blue;
-                    break;
-                case TYPE.Soil:
-                    collision.gameObject.layer = 8;
-                    collision.gameObject.GetComponent<MeshRenderer>().material.color = Color.white;
-                    break;
-                case TYPE.Vegetal:
-                    collision.gameObject.layer = 11;
-                    collision.gameObject.GetComponent<MeshRenderer>().material.color = Color.green;
-                    break;
-                case TYPE.Rock:
-                    collision.gameObject.layer = 12;
-                    collision.gameObject.GetComponent<MeshRenderer>().material.color = Color.grey;
-                    break;
-                default:
-                    break;
-            }
-            collision.gameObject.GetComponent<Spawner>().NavMeshAgentTypeID = _agent.agentTypeID;
-            collision.gameObject.GetComponent<Spawner>().enabled = true;
-            collision.gameObject.GetComponent<Spawner>().Element = Element;
-            Catch = false;
-            gameObject.SetActive(false);
-        }
+
 
         if (collision.gameObject.layer >= 8)
         {
             Catch = false;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (TryFusion && (other.gameObject.layer == 13))
+        {
+            GameObject new_tile = null;
+            switch (Element)
+            {
+                case TYPE.Fire:
+                    new_tile = GameObject.Instantiate(GameManager.Instance.NeutreFeu);
+                    new_tile.transform.position = other.transform.position;
+
+                    other.gameObject.layer = 9;
+                    break;
+                case TYPE.Water:
+                    new_tile = GameObject.Instantiate(GameManager.Instance.NeutreEau);
+                    new_tile.transform.position = other.transform.position - (Vector3.forward * 0.35f);
+                    new_tile.gameObject.layer = 10;
+                    break;
+                case TYPE.Soil:
+                    new_tile = GameObject.Instantiate(GameManager.Instance.NeutreSoil);
+                    new_tile.transform.position = other.transform.position;
+
+                    other.gameObject.layer = 8;
+                    break;
+                case TYPE.Vegetal:
+                    new_tile = GameObject.Instantiate(GameManager.Instance.NeutreVegetal);
+                    new_tile.transform.position = other.transform.position;
+
+                    other.gameObject.layer = 11;
+                    break;
+                case TYPE.Rock:
+                    new_tile = GameObject.Instantiate(GameManager.Instance.NeutreRock);
+                    new_tile.transform.position = other.transform.position;
+
+                    other.gameObject.layer = 12;
+                    break;
+                default:
+                    break;
+            }
+            new_tile.transform.position += Vector3.up * 0.4f;
+            new_tile.transform.parent = GameObject.Find("Tiles").transform;
+            new_tile.gameObject.GetComponent<Spawner>().NavMeshAgentTypeID = _agent.agentTypeID;
+            new_tile.gameObject.GetComponent<Spawner>().enabled = true;
+            new_tile.gameObject.GetComponent<Spawner>().Element = Element;
+            Catch = false;
+            other.gameObject.SetActive(false);
+            gameObject.SetActive(false);
+            TryFusion = false;
         }
     }
     public void Spawn(Vector3 direction)

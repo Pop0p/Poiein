@@ -33,7 +33,7 @@ public class SlimeDeplacement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.Instance.InPause)
+        if (GameManager.Instance.InPause || !_agent.isOnNavMesh)
             return;
         if (!_agent.pathPending && _agent.enabled)
         {
@@ -55,7 +55,7 @@ public class SlimeDeplacement : MonoBehaviour
     private void GetPath()
     {
         _try += 1;
-        if (_agent.enabled)
+        if (_agent.enabled && _agent.isOnNavMesh)
         {
             var availables = Arrival.Where(x => x.gameObject != _currentPath).ToArray();
             _rand = Random.Range(0, availables.Length);

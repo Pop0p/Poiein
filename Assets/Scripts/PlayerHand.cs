@@ -7,7 +7,7 @@ using UnityEngine;
 public class PlayerHand : MonoBehaviour
 {
     [SerializeField] private float SmoothTime;
-    [SerializeField] readonly int layerMask = (1 << 7 | 1 << 8 | 1 << 9 | 1 << 10 | 1 << 11 | 1 << 12 | 1 << 13);
+    [SerializeField] readonly int layerMask = (1 << 3 | 1 << 7 | 1 << 8 | 1 << 9 | 1 << 10 | 1 << 11 | 1 << 12 | 1 << 13);
 
     private Animator _animator;
 
@@ -50,6 +50,8 @@ public class PlayerHand : MonoBehaviour
             if (Input.GetMouseButtonDown(1))
             {
                 _animator.SetBool("CATCH", false);
+                Current_Poyo.Catch = false;
+                Current_Poyo.TryFusion = true;
                 must_throw = true;
             }
         }
