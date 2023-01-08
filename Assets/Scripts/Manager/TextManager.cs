@@ -38,12 +38,14 @@ public class TextManager : MonoBehaviour
         _affich_demi = false;
         _affich_quart = false;
         _affich_troisQuart = false;
+        _count = 0;
 
         _layersTiles = new int[_len];
         for (int i = 0; i < _len; i++)
         {
             _layersTiles[i] = Tiles[i].layer;
         }
+
     }
 
     // Update is called once per frame
@@ -67,37 +69,37 @@ public class TextManager : MonoBehaviour
         if (_count == _len && !_affich_all)
         {
             // afficher le text
-            gText.GetComponent<TextMeshProUGUI>().text = "Dans leur orgueil, ils ont appelé la mission « poiéin », du verbe « créer » en grec ancien.N’est - ce pas le plus grand des orgueils de se croire créateur et démiurge quand on détruit tout ? \n " +
+            gText.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Dans leur orgueil, ils ont appelé la mission « poiéin », du verbe « créer » en grec ancien.N’est - ce pas le plus grand des orgueils de se croire créateur et démiurge quand on détruit tout ? \n " +
                                                         "Et moi… Je me souviens maintenant. Je n’étais qu’un outil. Simple robot outil qui a survécu à l’humain.Simple robot qui doit reconstruire le monde. \n" +
                                                         "Ce n’est qu’un début.";
 
-            gText.transform.parent.gameObject.SetActive(true);
+            gText.SetActive(true);
             _affich_all = true;
         }
         else if (_count >= _troisQuart && !_affich_troisQuart)
         {
             // afficher le text
-            gText.GetComponent<TextMeshProUGUI>().text = "Oui, c’est ça. Le monde chutait… L’épuisement des ressources était inévitable. Les humains ne pouvaient pas se résoudre à disparaître. Ils créèrent des petites créatures capables de se reproduire à l’infini. Des créatures remplies des ressources naturelles qui s’épuisaient.";
-            gText.transform.parent.gameObject.SetActive(true);
+            gText.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Oui, c’est ça. Le monde chutait… L’épuisement des ressources était inévitable. Les humains ne pouvaient pas se résoudre à disparaître. Ils créèrent des petites créatures capables de se reproduire à l’infini. Des créatures remplies des ressources naturelles qui s’épuisaient.";
+            gText.SetActive(true);
             _affich_troisQuart = true;
 
         }
         else if (_count >= _demi)
         {
             // afficher le text
-            gText.GetComponent<TextMeshProUGUI>().text = "Un laboratoire… grouillant de petites créatures élémentaires. De toutes les couleurs, de toutes les tailles, comme celles-ci. Mais pourquoi étaient-elles là ? Que sont-elles ? Et quel était mon rôle ?";
-            gText.transform.parent.gameObject.SetActive(true);
+            gText.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Un laboratoire… grouillant de petites créatures élémentaires. De toutes les couleurs, de toutes les tailles, comme celles-ci. Mais pourquoi étaient-elles là ? Que sont-elles ? Et quel était mon rôle ?";
+            gText.SetActive(true);
             _affich_demi = true;
         }
         else if (_count >= _quart)
         {
             // afficher le text
-            gText.GetComponent<TextMeshProUGUI>().text = "Ces petits êtres qui grouillent… Ils me rappellent vaguement quelque chose. Je me souviens… une pièce étroite aux murs métalliques… des blouses blanches… des fioles. Un laboratoire !";
-            gText.transform.parent.gameObject.SetActive(true);
+            gText.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Ces petits êtres qui grouillent… Ils me rappellent vaguement quelque chose. Je me souviens… une pièce étroite aux murs métalliques… des blouses blanches… des fioles. Un laboratoire !";
+            gText.SetActive(true);
             _affich_quart = true;
         }
 
         yield return new WaitForSeconds(8f);
-        gText.transform.parent.gameObject.SetActive(false);
+        gText.SetActive(false);
     }
 }
