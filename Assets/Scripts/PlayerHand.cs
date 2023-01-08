@@ -9,12 +9,18 @@ public class PlayerHand : MonoBehaviour
     [SerializeField] private float SmoothTime;
     [SerializeField] readonly int layerMask = (1 << 7 | 1 << 8 | 1 << 9 | 1 << 10 | 1 << 11 | 1 << 12 | 1 << 13);
 
+    private Animator _animator;
+
     Poyoyoyo Highlighted = null;
     [SerializeField] bool has_one = false;
     bool must_throw = false;
 
     Vector3 MoveVelocity = Vector3.zero;
 
+    private void Awake()
+    {
+        _animator= GetComponent<Animator>();
+    }
     private void Update()
     {
         if (GameManager.Instance.InPause)
@@ -28,17 +34,20 @@ public class PlayerHand : MonoBehaviour
                     Highlighted.Catch = true;
                     Highlighted.OnGrabIn(gameObject.transform);
                     has_one = true;
+                    _animator.SetBool("CATCH", true);
                 }
                 else
                 {
                     Highlighted.Catch = false;
                     has_one = false;
                     Highlighted.OnGrabOut();
+                    _animator.SetBool("CATCH", false);
                     //Highlighted = null;
                 }
             }
             if (Input.GetMouseButtonDown(1))
             {
+                _animator.SetBool("CATCH", false);
                 must_throw = true;
             }
         }
