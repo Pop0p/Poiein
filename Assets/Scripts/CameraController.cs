@@ -27,8 +27,8 @@ public class CameraController : MonoBehaviour
     {
         if (GameManager.Instance.InPause)
             return;
-        float x = Convert.ToSingle(Input.GetKey(KeyCode.D)) - Convert.ToSingle(Input.GetKey(KeyCode.Q));
-        float z = Convert.ToSingle(Input.GetKey(KeyCode.Z)) - Convert.ToSingle(Input.GetKey(KeyCode.S));
+        float x = Convert.ToSingle(Input.GetKey(KeyCode.D)) - Convert.ToSingle(Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.A));
+        float z = Convert.ToSingle(Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.W)) - Convert.ToSingle(Input.GetKey(KeyCode.S));
         if (x != 0 || z != 0)
             TargetPosition = transform.position + new Vector3(x * 2, 0, z * 2);
 

@@ -5406,7 +5406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6321373541131306101, guid: eda25b19fef58974cb3e25ebd53d18ab, type: 3}
       propertyPath: m_text
-      value: Use the machine for merge 2 Poiein and discover another
+      value: Use the machine to merge 2 Poiein and discover another
       objectReference: {fileID: 0}
     - target: {fileID: 6321373541208158620, guid: eda25b19fef58974cb3e25ebd53d18ab, type: 3}
       propertyPath: m_Sprite
@@ -7277,6 +7277,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 686792317536900061, guid: 70d7ca997d43bbf448205766369920e4, type: 3}
+      propertyPath: m_text
+      value: Left click to grab in or grab out a Poiein
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70d7ca997d43bbf448205766369920e4, type: 3}
 --- !u!1 &1792253736 stripped
@@ -8408,6 +8412,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 910417389}
     m_Modifications:
+    - target: {fileID: 4762595656360153842, guid: 83cc15a0864859f489a8c6dd11c058dd, type: 3}
+      propertyPath: m_text
+      value: Right click to throw a Poiein to transform soil
+      objectReference: {fileID: 0}
     - target: {fileID: 4762595656371484566, guid: 83cc15a0864859f489a8c6dd11c058dd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8607,6 +8615,10 @@ PrefabInstance:
     - target: {fileID: 6321373540168283965, guid: eda25b19fef58974cb3e25ebd53d18ab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6321373541131306101, guid: eda25b19fef58974cb3e25ebd53d18ab, type: 3}
+      propertyPath: m_text
+      value: Use W, A, S, D to move camera and 0, 5 to rotate
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eda25b19fef58974cb3e25ebd53d18ab, type: 3}
