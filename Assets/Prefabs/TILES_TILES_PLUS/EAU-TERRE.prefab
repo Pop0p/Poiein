@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3377612224582209787}
   - component: {fileID: 3377612224582209786}
   - component: {fileID: 6299915538088489337}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EAU-TERRE
   m_TagString: Tile
   m_Icon: {fileID: 0}

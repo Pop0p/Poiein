@@ -3160,6 +3160,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6668999385348204963, guid: 2d9ea5df065255749ba74a43b48a8a12, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8096756144183221411, guid: 2d9ea5df065255749ba74a43b48a8a12, type: 3}
       propertyPath: m_Name
       value: UI_AND_MENU

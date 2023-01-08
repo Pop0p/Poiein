@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7246629113543742873}
   - component: {fileID: 7246629113543742878}
   - component: {fileID: 6917217680134668864}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EAU-VEGETAL
   m_TagString: Tile
   m_Icon: {fileID: 0}

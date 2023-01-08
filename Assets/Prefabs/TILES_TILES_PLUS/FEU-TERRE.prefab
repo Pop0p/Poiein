@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1145533272881927504}
   - component: {fileID: 1145533272881927505}
   - component: {fileID: 7131488917167636080}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FEU-TERRE
   m_TagString: Tile
   m_Icon: {fileID: 0}

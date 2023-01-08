@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 958428701949879141}
   - component: {fileID: 958428701949879140}
   - component: {fileID: -3245939115217008504}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ROCHE-TERRE
   m_TagString: Tile
   m_Icon: {fileID: 0}

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 153161785007628352}
   - component: {fileID: 153161785007628359}
   - component: {fileID: 1905509486539354068}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TERRE-VEGETAL
   m_TagString: Tile
   m_Icon: {fileID: 0}
