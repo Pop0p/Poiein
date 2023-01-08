@@ -54,20 +54,21 @@ public class Incubateur : MonoBehaviour
             case TYPE.Water:
                 if (element2 == TYPE.Soil)
                 {
-                    index = 3;
+                    index = 4;
                 }
                 break;
             case TYPE.Soil:
                 if (element2 == TYPE.Water)
                 {
-                    index = 3;
+                    index = 4;
                 }
                 else if (element2 == TYPE.Fire)
                 {
-                    index = 4;
+                    index = 2;
                 }
                 break;
             default:
+                Debug.Log("Pas bon");
                 break;
         }
 
