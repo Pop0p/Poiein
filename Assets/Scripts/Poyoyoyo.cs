@@ -1,13 +1,8 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Net.Sockets;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Events;
-using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
-using static UnityEngine.UI.GridLayoutGroup;
+using Random = UnityEngine.Random;
 
 public class Poyoyoyo : MonoBehaviour
 {
@@ -227,6 +222,7 @@ public class Poyoyoyo : MonoBehaviour
             GameObject new_tile = null;
             Catch = false;
             TryFusion = false;
+            bool pos = false;
             switch (Element)
             {
                 case TYPE.Fire:
@@ -252,6 +248,7 @@ public class Poyoyoyo : MonoBehaviour
                         new_tile = Instantiate(GameManager.Instance.NeutreEau);
                     else
                         return;
+                    pos = true;
                     new_tile.transform.position = other.transform.position - (Vector3.forward * 0.35f);
                     new_tile.gameObject.layer = 10;
                     break;
@@ -308,7 +305,8 @@ public class Poyoyoyo : MonoBehaviour
                     break;
             }
 
-            new_tile.transform.position = new Vector3(other.transform.position.x, 0.4f, other.transform.position.z);
+            if (!pos)
+                new_tile.transform.position = new Vector3(other.transform.position.x, 0.4f, other.transform.position.z);
             new_tile.transform.parent = GameObject.Find("Tiles").transform;
             if (new_tile.TryGetComponent<Spawner>(out Spawner sp))
             {
