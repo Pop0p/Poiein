@@ -80,7 +80,7 @@ public class Poyoyoyo : MonoBehaviour
             _currentTime = 0;
         }
 
-        if (_rb.velocity.y <= -3)
+        if (_rb.velocity.y <= -1.5f)
         {
             float size = isTiny ? 0.75f : 1;
             float yScale = Mathf.Lerp(size, size * 2, Mathf.Abs(_rb.velocity.y) / 8);
