@@ -26,6 +26,12 @@ public class GameManager : MonoBehaviour
 
     public GameObject TerreVegetal; // CHECK
 
+    public GameObject CommandLeft;
+    public GameObject CommandRight;
+    public GameObject CommandKeyboard;
+    private bool one;
+    private bool after;
+
 
     private void Awake()
     {
@@ -37,7 +43,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        one = true;
     }
 
     // Update is called once per frame
@@ -51,5 +57,35 @@ public class GameManager : MonoBehaviour
             else
                 MenuManager.Instance.OnPlay();
         }
+
+        if (one)
+        {
+            StartCoroutine(DisplayCommandLeft());
+            one = false;
+        }
+
+    }
+
+    private IEnumerator DisplayCommandLeft()
+    {
+        CommandLeft.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        CommandLeft.SetActive(false);
+        StartCoroutine(DisplayCommandRight());
+    }
+
+    private IEnumerator DisplayCommandRight()
+    {
+        CommandRight.SetActive(true);
+        yield return new WaitForSeconds(5f); 
+        CommandRight.SetActive(false);
+        StartCoroutine(DisplayCommandKeyboard());
+    }
+
+    private IEnumerator DisplayCommandKeyboard()
+    {
+        CommandKeyboard.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        CommandKeyboard.SetActive(false);
     }
 }
