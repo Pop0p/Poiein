@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject _prefabSoil;
     [SerializeField] private GameObject _prefabRock;
     [SerializeField] private GameObject _prefabVegetal;
-    [HideInInspector] public TYPE[] Element;
+    public TYPE[] Element;
     private float _timer;
 
 
