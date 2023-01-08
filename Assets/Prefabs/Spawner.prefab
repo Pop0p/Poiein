@@ -58,10 +58,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 287e4dd274dae4e43ae62be3c6be17e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabFire: {fileID: 4979067923031759888, guid: 23e29f350fe5a3e4696de52dea7a998c, type: 3}
+  _prefabFire: {fileID: 4979067923031759888, guid: f66a124e1a7ea3640b6ffbd40399e8b4, type: 3}
   _prefabWater: {fileID: 4877822099233361955, guid: 718e7b7ffbb1b3a438802d07ad6b1741, type: 3}
   _prefabSoil: {fileID: 8592164128266435083, guid: f98a0d5fec3cf2a4dabbb677f87b8ddf, type: 3}
   _prefabRock: {fileID: 475842848307867902, guid: 041ec35ede3637644a208bfb17b5ae36, type: 3}
   _prefabVegetal: {fileID: 3717291231627447026, guid: d2aec118e1c035942bc675fed650ac2d, type: 3}
-  Element: 3
   NavMeshAgentTypeID: 0
+  Element: 3

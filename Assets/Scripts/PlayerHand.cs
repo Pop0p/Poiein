@@ -38,7 +38,7 @@ public class PlayerHand : MonoBehaviour
                 }
                 else
                 {
-                    // Highlighted.Catch = false;
+                    Highlighted.Catch = false;
                     has_one = false;
                     Highlighted.OnGrabOut();
                     _animator.SetBool("CATCH", false);
