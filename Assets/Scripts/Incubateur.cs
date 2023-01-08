@@ -21,7 +21,8 @@ public class Incubateur : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("collision");
-        if (collision.gameObject.layer == 7 && (collision.transform.parent != Emplacements[0] && collision.transform.parent != Emplacements[1]))
+        Debug.Log(collision.gameObject.GetComponent<Poyoyoyo>().Catch);
+        if (collision.gameObject.layer == 7 && (collision.transform.parent != Emplacements[0] && collision.transform.parent != Emplacements[1]) && collision.gameObject.GetComponent<Poyoyoyo>().Catch)
         {
             collision.transform.position = Emplacements[_nbPoiein].position;
             _poieinFusion[_nbPoiein] = collision.gameObject;

@@ -199,6 +199,11 @@ public class Poyoyoyo : MonoBehaviour
             Catch = false;
             gameObject.SetActive(false);
         }
+
+        if (collision.gameObject.layer >= 8)
+        {
+            Catch = false;
+        }
     }
     public void Spawn(Vector3 direction)
     {
