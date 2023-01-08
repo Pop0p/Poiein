@@ -38,9 +38,12 @@ public class PlayerHand : MonoBehaviour
                     has_one = true;
                     Discover.SetDiscover(Current_Poyo.Element);
                     _animator.SetBool("CATCH", true);
+                    Current_Poyo.TryFusion = false;
+
                 }
                 else
                 {
+                    Current_Poyo.TryFusion = false;
                     Current_Poyo.Catch = false;
                     has_one = false;
                     Current_Poyo.OnGrabOut();

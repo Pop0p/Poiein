@@ -218,11 +218,20 @@ public class Poyoyoyo : MonoBehaviour
     {
         if (TryFusion && other.tag == "Tile")
         {
-            Debug.Log(other.gameObject.layer);
+            if (other.TryGetComponent(out Spawner x) && x.Element.Length == 2)
+            {
+                Catch = false;
+                TryFusion = false;
+                _rb.isKinematic = false;
+                _grabed = false;
+                _owner = null;
+                return;
+            }
             GameObject new_tile = null;
             Catch = false;
             TryFusion = false;
             bool pos = false;
+            bool success = true;
             switch (Element)
             {
                 case TYPE.Fire:
@@ -233,9 +242,8 @@ public class Poyoyoyo : MonoBehaviour
                     else if (other.gameObject.layer == 13)
                         new_tile = Instantiate(GameManager.Instance.NeutreFeu);
                     else
-                        return;
+                        success = false;
                     new_tile.transform.position = other.transform.position;
-                    other.gameObject.layer = 9;
                     break;
                 case TYPE.Water:
                     if (other.gameObject.layer == 12)
@@ -247,7 +255,7 @@ public class Poyoyoyo : MonoBehaviour
                     else if (other.gameObject.layer == 13)
                         new_tile = Instantiate(GameManager.Instance.NeutreEau);
                     else
-                        return;
+                        success = false;
                     pos = true;
                     new_tile.transform.position = other.transform.position - (Vector3.forward * 0.35f);
                     new_tile.gameObject.layer = 10;
@@ -264,10 +272,8 @@ public class Poyoyoyo : MonoBehaviour
                     else if (other.gameObject.layer == 13)
                         new_tile = Instantiate(GameManager.Instance.NeutreSoil);
                     else
-                        return;
+                        success = false;
                     new_tile.transform.position = other.transform.position;
-
-                    other.gameObject.layer = 8;
                     break;
                 case TYPE.Vegetal:
                     if (other.gameObject.layer == 11)
@@ -281,10 +287,8 @@ public class Poyoyoyo : MonoBehaviour
                     else if (other.gameObject.layer == 13)
                         new_tile = Instantiate(GameManager.Instance.NeutreVegetal);
                     else
-                        return;
+                        success = false;
                     new_tile.transform.position = other.transform.position;
-
-                    other.gameObject.layer = 11;
                     break;
                 case TYPE.Rock:
                     if (other.gameObject.layer == 10)
@@ -296,13 +300,21 @@ public class Poyoyoyo : MonoBehaviour
                     else if (other.gameObject.layer == 13)
                         new_tile = Instantiate(GameManager.Instance.NeutreRock);
                     else
-                        return;
+                        success = false;
                     new_tile.transform.position = other.transform.position;
-
-                    other.gameObject.layer = 12;
                     break;
                 default:
                     break;
+            }
+
+            if (!success)
+            {
+                Catch = false;
+                TryFusion = false;
+                _rb.isKinematic = false;
+                _grabed = false;
+                _owner = null;
+                return;
             }
 
             if (!pos)
@@ -313,6 +325,7 @@ public class Poyoyoyo : MonoBehaviour
                 sp.enabled = true;
                 if (other.gameObject.layer != 13)
                 {
+                    Debug.Log("2 ELEMENTS");
                     switch (other.gameObject.layer)
                     {
                         case 8:
@@ -333,10 +346,14 @@ public class Poyoyoyo : MonoBehaviour
                     }
                 }
                 else
+                {
+                    Debug.Log("1 ELEMENT");
                     sp.Element = new TYPE[] { Element };
+                }
             }
             other.gameObject.SetActive(false);
             gameObject.SetActive(false);
+            
         }
     }
     public void Spawn(Vector3 direction)
@@ -357,7 +374,6 @@ public class Poyoyoyo : MonoBehaviour
     {
         if (_splashing)
             yield return null;
-        Debug.Log("Splash !");
         float current = 0;
         float duration = Random.Range(0.25f, .35f);
         float x_splash = isTiny ? Random.Range(.8f, 1.4f) : Random.Range(1.4f, 2.8f);
@@ -385,7 +401,6 @@ public class Poyoyoyo : MonoBehaviour
     {
         if (_unSplashing)
             yield return null;
-        Debug.Log("Unsplash");
         float current = 0;
         float duration = Random.Range(0.25f, .35f);
 
