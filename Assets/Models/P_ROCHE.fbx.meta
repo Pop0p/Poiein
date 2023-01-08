@@ -3,7 +3,52 @@ guid: 2b45c2859f46342489f3ea18faf03487
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_blush.001
+    second: {fileID: 2100000, guid: 88e686ad911aed6458414573db1725fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_eyes.001
+    second: {fileID: 2100000, guid: 5dc83c47b84416c44bc8220e8ff050cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_eyes.002
+    second: {fileID: 2100000, guid: 6d69d022fd7d2f64197edf1fff7dc0c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_eyes_interior_violet
+    second: {fileID: 2100000, guid: 1a280396524177b4abd5daec5a8faf07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_light
+    second: {fileID: 2100000, guid: 5b52c992819796b4ead4ac97721f22b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_light.001
+    second: {fileID: 2100000, guid: 240d9a099a7280743808c7f7d2909c72, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_peau_exterieur
+    second: {fileID: 2100000, guid: f9666f6560f1a954cba184fda45a14a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_peau_exterieur.001
+    second: {fileID: 2100000, guid: 5fdbc0c4dbbb55245b6b14eccc0dba43, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_peau_exterieur.002
+    second: {fileID: 2100000, guid: 7ba69825160faa0439053caeda06d839, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
