@@ -14,6 +14,18 @@ public class GameManager : MonoBehaviour
     public GameObject NeutreRock;
     public GameObject NeutreSoil;
 
+    public GameObject EauTerre; // CHECK
+    public GameObject EauVegetal;
+
+    public GameObject FeuTerre; // CHECK
+    public GameObject FeuVegetal; // CHECK
+
+    public GameObject RocheEau; // CHECK
+    public GameObject RocheTerre; // CHECK
+    public GameObject RocheVegetal; // CHECK
+
+    public GameObject TerreVegetal; // CHECK
+
 
     private void Awake()
     {
