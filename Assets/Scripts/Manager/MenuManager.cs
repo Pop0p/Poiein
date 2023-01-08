@@ -11,6 +11,7 @@ public class MenuManager : MonoBehaviour
     public bool InGame;
 
     public static MenuManager Instance;
+    public GameObject MenuPause;
 
     private void Awake()
     {
@@ -22,8 +23,8 @@ public class MenuManager : MonoBehaviour
 
     public void OnPause()
     {
-        transform.Find("UI_PAUSE").gameObject.SetActive(true);
-
+        MenuPause.GetComponent<Pause>().UpdateDiscover();
+        MenuPause.SetActive(true);
     }
     public void OnPlay()
     {
