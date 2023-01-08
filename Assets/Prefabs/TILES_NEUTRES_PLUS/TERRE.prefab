@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2633905929998843943}
   - component: {fileID: 9086907681285094413}
   - component: {fileID: 9086907681285094412}
-  - component: {fileID: 9086907681285094411}
   m_Layer: 8
   m_Name: TERRE
   m_TagString: Neutre
@@ -115,24 +114,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4579456090853335538}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 5, y: 2.029585, z: 5}
   m_Center: {x: 0.07992542, y: -0.19580573, z: -0.0243088}
---- !u!54 &9086907681285094411
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4579456090853335538}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0

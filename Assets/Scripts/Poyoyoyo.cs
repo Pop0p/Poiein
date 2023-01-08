@@ -251,6 +251,7 @@ public class Poyoyoyo : MonoBehaviour
                 default:
                     break;
             }
+
             new_tile.transform.position += Vector3.up * 0.4f;
             new_tile.transform.parent = GameObject.Find("Tiles").transform;
             new_tile.gameObject.GetComponent<Spawner>().NavMeshAgentTypeID = _agent.agentTypeID;
