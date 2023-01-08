@@ -36,6 +36,7 @@ public class PlayerHand : MonoBehaviour
                     Current_Poyo.Catch = true;
                     Current_Poyo.OnGrabIn(gameObject.transform);
                     has_one = true;
+                    Discover.SetDiscover(Current_Poyo.Element);
                     _animator.SetBool("CATCH", true);
                 }
                 else
