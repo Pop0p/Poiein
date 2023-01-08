@@ -375,7 +375,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Bruno CAUBET  \nSound Design\r\n\nDylan DROMARD\nDev\r\n\nMari-Annaig
     DUPAYA \nDev\n\nWilliam GAUTHIER \nGD / UX / UI Design \r\n\nChloe RAPHEL\nPM
-    & Narrative Design\r\n\nMarcie \n3D\r"
+    & Narrative Design\r\n\nMarcie CETOU\nArtiste 3D\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 167924a60ebc7f04596608e708ed03ee, type: 2}
   m_sharedMaterial: {fileID: -5338700778460431603, guid: 167924a60ebc7f04596608e708ed03ee, type: 2}
@@ -1409,6 +1409,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InGame: 0
+  MenuPause: {fileID: 0}
+  SoundEffect: {fileID: 0}
+  PauseSound: {fileID: 0}
+  FusionSound: {fileID: 0}
+  FusionFailedSound: {fileID: 0}
+  JumpSound: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
