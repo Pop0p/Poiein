@@ -2442,6 +2442,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InPause: 0
+  NeutreEau: {fileID: 0}
+  NeutreFeu: {fileID: 0}
+  NeutreVegetal: {fileID: 0}
+  NeutreRock: {fileID: 0}
+  NeutreSoil: {fileID: 0}
 --- !u!4 &776633125
 Transform:
   m_ObjectHideFlags: 0
@@ -5546,6 +5551,7 @@ MonoBehaviour:
   - {fileID: 2033315873}
   - {fileID: 435565412}
   - {fileID: 1108348048}
+  gText: {fileID: 1961998555}
 --- !u!4 &1637156455
 Transform:
   m_ObjectHideFlags: 0
@@ -6127,6 +6133,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1638189869634312595, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
   m_PrefabInstance: {fileID: 1437780251}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1961998555 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6668999384182082629, guid: 2d9ea5df065255749ba74a43b48a8a12, type: 3}
+  m_PrefabInstance: {fileID: 8096756144941874870}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1984153346
 GameObject:
@@ -6827,7 +6838,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6668999385348204963, guid: 2d9ea5df065255749ba74a43b48a8a12, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6668999385632877036, guid: 2d9ea5df065255749ba74a43b48a8a12, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8096756144011110751, guid: 2d9ea5df065255749ba74a43b48a8a12, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
