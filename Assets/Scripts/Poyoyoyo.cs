@@ -82,7 +82,7 @@ public class Poyoyoyo : MonoBehaviour
             _currentTime = 0;
         }
 
-        if (_rb.velocity.y <= -1.5f)
+        if (_rb.velocity.y < 0)
         {
             float size = isTiny ? 0.75f : 1;
             float yScale = Mathf.Lerp(size, size * 2, Mathf.Abs(_rb.velocity.y) / 8);
@@ -280,6 +280,7 @@ public class Poyoyoyo : MonoBehaviour
     {
         if (_splashing)
             yield return null;
+        Debug.Log("Splash !");
         float current = 0;
         float duration = Random.Range(0.25f, .35f);
         float x_splash = isTiny ? Random.Range(.8f, 1.4f) : Random.Range(1.4f, 2.8f);
@@ -307,6 +308,7 @@ public class Poyoyoyo : MonoBehaviour
     {
         if (_unSplashing)
             yield return null;
+        Debug.Log("Unsplash");
         float current = 0;
         float duration = Random.Range(0.25f, .35f);
 
