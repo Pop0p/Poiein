@@ -17,6 +17,8 @@ public class Incubateur : MonoBehaviour
     private bool collisionWithHand;
     private PlayerHand _playerHand;
 
+    private bool shrinking = false;
+
     private void Awake()
     {
         _playerHand = GameObject.FindGameObjectWithTag("Hand").GetComponent<PlayerHand>();
@@ -61,7 +63,6 @@ public class Incubateur : MonoBehaviour
 
     IEnumerator Fusion()
     {
-        yield return new WaitForSeconds(.75f);
         TYPE element1 = _poieinFusion[0].GetComponent<Poyoyoyo>().Element;
         TYPE element2 = _poieinFusion[1].GetComponent<Poyoyoyo>().Element;
 
@@ -97,8 +98,10 @@ public class Incubateur : MonoBehaviour
                 break;
         }
 
+
         if (index == -1)
         {
+            yield return new WaitForSeconds(.75f);
             _poieinFusion[0].GetComponent<Poyoyoyo>().OnIncubateurOut();
             _poieinFusion[1].GetComponent<Poyoyoyo>().OnIncubateurOut();
 
@@ -108,6 +111,9 @@ public class Incubateur : MonoBehaviour
         }
         else
         {
+            GetComponent<AudioSource>().PlayOneShot(MenuManager.Instance.FusionSound);
+            StartCoroutine(SHRINK());
+            yield return new WaitForSeconds(3.75f);
             GameObject g = Instantiate(TypePoiein[index]);
             g.transform.position = Retour.position;
             g.GetComponent<Poyoyoyo>().OnIncubateurOut();
@@ -119,5 +125,37 @@ public class Incubateur : MonoBehaviour
             _poieinFusion[1] = null;
             _nbPoiein = 0;
         }
+    }
+
+    IEnumerator SHRINK()
+    {
+        if (shrinking)
+            yield return null;
+
+        shrinking = true;
+        Vector3 start_one = _poieinFusion[0].transform.localScale;
+        Vector3 start_two = _poieinFusion[1].transform.localScale;
+
+        Vector3 start_pos_one = _poieinFusion[0].transform.position;
+        Vector3 start_pos_two = _poieinFusion[1].transform.position;
+        float current = 0;
+        float duration = 3.75f;
+        while (true)
+        {
+            _poieinFusion[0].transform.localScale = Vector3.Lerp(start_one, Vector3.zero , current / duration);
+            _poieinFusion[1].transform.localScale = Vector3.Lerp(start_two, Vector3.zero , current / duration);
+
+            _poieinFusion[0].transform.position = Vector3.Lerp(start_pos_one, start_pos_one + (Vector3.down * 1.5f), current / (duration * 2));
+            _poieinFusion[1].transform.position = Vector3.Lerp(start_pos_two, start_pos_two + (Vector3.down * 1.5f), current / (duration * 2));
+
+
+            if (current >= duration)
+                break;
+
+            current += Time.deltaTime;
+            yield return null;
+        }
+        shrinking = true;
+        yield return null;
     }
 }

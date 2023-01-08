@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _timer = Random.Range(5, 16);
+        _timer = Random.Range(12, 24);
     }
 
     // Update is called once per frame
@@ -62,7 +62,7 @@ public class Spawner : MonoBehaviour
             cube.GetComponent<NavMeshAgent>().agentTypeID = NavMeshAgentTypeID;
             cube.transform.parent = GameObject.Find("Poiens").transform;
             cube.transform.position = transform.position + (Vector3.up * 4);
-            _timer = Random.Range(12, 32);
+            _timer = Random.Range(24, 60);
         }
 
         _timer -= Time.deltaTime;

@@ -88,10 +88,16 @@ public class Poyoyoyo : MonoBehaviour
             float yScale = Mathf.Lerp(size, size * 2, Mathf.Abs(_rb.velocity.y) / 8);
             transform.localScale = new Vector3(size / yScale, yScale, size);
         }
+
+        if (transform.position.y < -100)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     private void DoJump(bool dir)
     {
+        GetComponent<AudioSource>().PlayOneShot(MenuManager.Instance.JumpSound);
         _rb.velocity = _agent.velocity;
         _agentHadPath = _agent.hasPath;
         _agentDestination = _agent.destination;

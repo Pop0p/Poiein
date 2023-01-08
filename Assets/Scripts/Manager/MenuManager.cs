@@ -12,6 +12,12 @@ public class MenuManager : MonoBehaviour
 
     public static MenuManager Instance;
     public GameObject MenuPause;
+    public AudioSource SoundEffect;
+
+    public AudioClip PauseSound;
+    public AudioClip FusionSound;
+    public AudioClip FusionFailedSound;
+    public AudioClip JumpSound;
 
     private void Awake()
     {
@@ -21,10 +27,16 @@ public class MenuManager : MonoBehaviour
             Destroy(Instance);
     }
 
+    public void OnFusion()
+    {
+        SoundEffect.PlayOneShot(FusionSound);
+    }
     public void OnPause()
     {
         MenuPause.GetComponent<Pause>().UpdateDiscover();
         MenuPause.SetActive(true);
+        SoundEffect.time = 3;
+        SoundEffect.PlayOneShot(PauseSound);
     }
     public void OnPlay()
     {
