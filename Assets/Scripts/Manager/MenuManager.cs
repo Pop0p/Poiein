@@ -52,10 +52,7 @@ public class MenuManager : MonoBehaviour
     {
         if (!InGame)
         {
-            if (UnityEngine.Application.isPlaying)
-                EditorApplication.ExitPlaymode();
-            else
-                Application.Quit();
+            Application.Quit();
         }
         else
         {
