@@ -3,7 +3,42 @@ guid: 6ee8ee04ae60b6a4d901224aefeca4ed
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_black
+    second: {fileID: 2100000, guid: cf2f02afbdffd2a4b8474a0e624e7b65, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_blanc
+    second: {fileID: 2100000, guid: 1fd14441619a40e4ba7d2cb98dc1ea33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_contour
+    second: {fileID: 2100000, guid: 2204fc0920148db408640e6b0206ed14, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_eye_blanc
+    second: {fileID: 2100000, guid: af6320d8fa519e743a82aeb251120750, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_eye_color
+    second: {fileID: 2100000, guid: e00d8a5a49beaf3498d25bd5fd840aeb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_eye_contour
+    second: {fileID: 2100000, guid: 5b328747861c94842bab123332c1a0cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_metallique
+    second: {fileID: 2100000, guid: d63beff47fd1f344e959bc5a4f81e0d4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
