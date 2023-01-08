@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public GameObject RocheEau; // CHECK
     public GameObject RocheTerre; // CHECK
     public GameObject RocheVegetal; // CHECK
+    public GameObject RocheFeu; // CHECK
 
     public GameObject TerreVegetal; // CHECK
 

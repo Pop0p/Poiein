@@ -2699,6 +2699,7 @@ MonoBehaviour:
   RocheEau: {fileID: 847150448144493114, guid: 10cc90bb452784f40ab4253aacef1097, type: 3}
   RocheTerre: {fileID: 3578407778432956021, guid: 58e4cad1485a8d2478d18c5f3c6480ba, type: 3}
   RocheVegetal: {fileID: 8507829803274855431, guid: adc0047fb6ecd58418d2db6c9179be95, type: 3}
+  RocheFeu: {fileID: 499544882090849361, guid: a5509df8fd8668e4f92668d033bacfc8, type: 3}
   TerreVegetal: {fileID: 4522784924699473246, guid: 9b9f2de4157a18a45b50bf342cecb639, type: 3}
   CommandLeft: {fileID: 1792253736}
   CommandRight: {fileID: 373092311}

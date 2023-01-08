@@ -239,26 +239,34 @@ public class Poyoyoyo : MonoBehaviour
                         new_tile = Instantiate(GameManager.Instance.FeuTerre);
                     else if (other.gameObject.layer == 11)
                         new_tile = Instantiate(GameManager.Instance.FeuVegetal);
+                    else if (other.gameObject.layer == 12)
+                        new_tile = Instantiate(GameManager.Instance.RocheFeu);
                     else if (other.gameObject.layer == 13)
                         new_tile = Instantiate(GameManager.Instance.NeutreFeu);
                     else
                         success = false;
-                    new_tile.transform.position = other.transform.position;
                     break;
                 case TYPE.Water:
                     if (other.gameObject.layer == 12)
+                    {
                         new_tile = Instantiate(GameManager.Instance.RocheEau);
+                        pos = true;
+                        new_tile.transform.position = other.transform.position + (Vector3.forward * 0.4f);
+                    }
                     else if (other.gameObject.layer == 8)
                         new_tile = Instantiate(GameManager.Instance.EauTerre);
                     else if (other.gameObject.layer == 11)
                         new_tile = Instantiate(GameManager.Instance.EauVegetal);
                     else if (other.gameObject.layer == 13)
+                    {
                         new_tile = Instantiate(GameManager.Instance.NeutreEau);
+                        pos = true;
+                        new_tile.transform.position = other.transform.position - (Vector3.forward * 0.35f);
+                        new_tile.gameObject.layer = 10;
+                    }
                     else
                         success = false;
-                    pos = true;
-                    new_tile.transform.position = other.transform.position - (Vector3.forward * 0.35f);
-                    new_tile.gameObject.layer = 10;
+
                     break;
                 case TYPE.Soil:
                     if (other.gameObject.layer == 9)
@@ -266,42 +274,55 @@ public class Poyoyoyo : MonoBehaviour
                     else if (other.gameObject.layer == 12)
                         new_tile = Instantiate(GameManager.Instance.RocheTerre);
                     else if (other.gameObject.layer == 11)
+                    {
                         new_tile = Instantiate(GameManager.Instance.TerreVegetal);
+                        pos = true;
+                        new_tile.transform.rotation = Quaternion.Euler(0, 35, 0);
+                        new_tile.transform.position = other.transform.position + (Vector3.right * 0.5f);
+                    }
                     else if (other.gameObject.layer == 10)
                         new_tile = Instantiate(GameManager.Instance.EauTerre);
                     else if (other.gameObject.layer == 13)
                         new_tile = Instantiate(GameManager.Instance.NeutreSoil);
                     else
                         success = false;
-                    new_tile.transform.position = other.transform.position;
                     break;
                 case TYPE.Vegetal:
-                    if (other.gameObject.layer == 11)
+                    if (other.gameObject.layer == 9)
                         new_tile = Instantiate(GameManager.Instance.FeuVegetal);
                     else if (other.gameObject.layer == 12)
                         new_tile = Instantiate(GameManager.Instance.RocheVegetal);
                     else if (other.gameObject.layer == 8)
+                    {
                         new_tile = Instantiate(GameManager.Instance.TerreVegetal);
+                        pos = true;
+                        new_tile.transform.rotation = Quaternion.Euler(0, 35, 0);
+                        new_tile.transform.position = other.transform.position + (Vector3.right * 0.5f);
+                    }
                     else if (other.gameObject.layer == 10)
                         new_tile = Instantiate(GameManager.Instance.EauVegetal);
                     else if (other.gameObject.layer == 13)
                         new_tile = Instantiate(GameManager.Instance.NeutreVegetal);
                     else
                         success = false;
-                    new_tile.transform.position = other.transform.position;
                     break;
                 case TYPE.Rock:
                     if (other.gameObject.layer == 10)
+                    {
                         new_tile = Instantiate(GameManager.Instance.RocheEau);
+                        pos = true;
+                        new_tile.transform.position = other.transform.position + (Vector3.forward * 0.4f);
+                    }
                     else if (other.gameObject.layer == 11)
                         new_tile = Instantiate(GameManager.Instance.RocheVegetal);
                     else if (other.gameObject.layer == 8)
                         new_tile = Instantiate(GameManager.Instance.RocheTerre);
+                    else if (other.gameObject.layer == 9)
+                        new_tile = Instantiate(GameManager.Instance.RocheFeu);
                     else if (other.gameObject.layer == 13)
                         new_tile = Instantiate(GameManager.Instance.NeutreRock);
                     else
                         success = false;
-                    new_tile.transform.position = other.transform.position;
                     break;
                 default:
                     break;
@@ -318,7 +339,7 @@ public class Poyoyoyo : MonoBehaviour
             }
 
             if (!pos)
-                new_tile.transform.position = new Vector3(other.transform.position.x, 0.4f, other.transform.position.z);
+                new_tile.transform.position = new Vector3(other.transform.position.x, 0, other.transform.position.z);
             new_tile.transform.parent = GameObject.Find("Tiles").transform;
             if (new_tile.TryGetComponent<Spawner>(out Spawner sp))
             {
@@ -353,7 +374,7 @@ public class Poyoyoyo : MonoBehaviour
             }
             other.gameObject.SetActive(false);
             gameObject.SetActive(false);
-            
+
         }
     }
     public void Spawn(Vector3 direction)
