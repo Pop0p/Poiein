@@ -29,8 +29,8 @@ public class GameManager : MonoBehaviour
     public GameObject CommandLeft;
     public GameObject CommandRight;
     public GameObject CommandKeyboard;
+    public GameObject CommandIncubateur;
     private bool one;
-    private bool after;
 
 
     private void Awake()
@@ -87,5 +87,13 @@ public class GameManager : MonoBehaviour
         CommandKeyboard.SetActive(true);
         yield return new WaitForSeconds(5f);
         CommandKeyboard.SetActive(false);
+        StartCoroutine(DisplayCommandIncubateur());
+    }
+
+    private IEnumerator DisplayCommandIncubateur()
+    {
+        CommandIncubateur.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        CommandIncubateur.SetActive(false);
     }
 }
