@@ -9,6 +9,7 @@ TagManager:
   - Hand
   - Incubateur
   - Sol
+  - Tile
   layers:
   - Default
   - TransparentFX

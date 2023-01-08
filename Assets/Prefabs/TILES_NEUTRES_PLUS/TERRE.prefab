@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -2729213233063800127}
   m_Layer: 8
   m_Name: TERRE
-  m_TagString: Neutre
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,8 +105,7 @@ MonoBehaviour:
   _prefabSoil: {fileID: 8592164128266435083, guid: f98a0d5fec3cf2a4dabbb677f87b8ddf, type: 3}
   _prefabRock: {fileID: 475842848307867902, guid: 041ec35ede3637644a208bfb17b5ae36, type: 3}
   _prefabVegetal: {fileID: 3717291231627447026, guid: d2aec118e1c035942bc675fed650ac2d, type: 3}
-  NavMeshAgentTypeID: 0
-  Element: 3
+  Element: 
 --- !u!65 &9086907681285094412
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -132,7 +131,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: df6969fecfefb5b4787df25681ce0870, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -141,7 +140,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 5
-  MaxDistance: 500
+  MaxDistance: 350
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0

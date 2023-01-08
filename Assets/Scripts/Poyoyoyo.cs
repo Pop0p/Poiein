@@ -166,6 +166,7 @@ public class Poyoyoyo : MonoBehaviour
     }
     public void OnIncubateurIn()
     {
+        Catch = false;
         _rb.isKinematic = true;
         _agentHadPath = _agent.hasPath;
         _agentDestination = _agent.destination;
@@ -220,36 +221,85 @@ public class Poyoyoyo : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (TryFusion && (other.gameObject.layer == 13))
+        if (TryFusion && other.tag == "Tile")
         {
+            Debug.Log(other.gameObject.layer);
             GameObject new_tile = null;
+            Catch = false;
+            TryFusion = false;
             switch (Element)
             {
                 case TYPE.Fire:
-                    new_tile = GameObject.Instantiate(GameManager.Instance.NeutreFeu);
+                    if (other.gameObject.layer == 8)
+                        new_tile = Instantiate(GameManager.Instance.FeuTerre);
+                    else if (other.gameObject.layer == 11)
+                        new_tile = Instantiate(GameManager.Instance.FeuVegetal);
+                    else if (other.gameObject.layer == 13)
+                        new_tile = Instantiate(GameManager.Instance.NeutreFeu);
+                    else
+                        return;
                     new_tile.transform.position = other.transform.position;
-
                     other.gameObject.layer = 9;
                     break;
                 case TYPE.Water:
-                    new_tile = GameObject.Instantiate(GameManager.Instance.NeutreEau);
+                    if (other.gameObject.layer == 12)
+                        new_tile = Instantiate(GameManager.Instance.RocheEau);
+                    else if (other.gameObject.layer == 8)
+                        new_tile = Instantiate(GameManager.Instance.EauTerre);
+                    else if (other.gameObject.layer == 11)
+                        new_tile = Instantiate(GameManager.Instance.EauVegetal);
+                    else if (other.gameObject.layer == 13)
+                        new_tile = Instantiate(GameManager.Instance.NeutreEau);
+                    else
+                        return;
                     new_tile.transform.position = other.transform.position - (Vector3.forward * 0.35f);
                     new_tile.gameObject.layer = 10;
                     break;
                 case TYPE.Soil:
-                    new_tile = GameObject.Instantiate(GameManager.Instance.NeutreSoil);
+                    if (other.gameObject.layer == 9)
+                        new_tile = Instantiate(GameManager.Instance.FeuTerre);
+                    else if (other.gameObject.layer == 12)
+                        new_tile = Instantiate(GameManager.Instance.RocheTerre);
+                    else if (other.gameObject.layer == 11)
+                        new_tile = Instantiate(GameManager.Instance.TerreVegetal);
+                    else if (other.gameObject.layer == 10)
+                        new_tile = Instantiate(GameManager.Instance.EauTerre);
+                    else if (other.gameObject.layer == 13)
+                        new_tile = Instantiate(GameManager.Instance.NeutreSoil);
+                    else
+                        return;
                     new_tile.transform.position = other.transform.position;
 
                     other.gameObject.layer = 8;
                     break;
                 case TYPE.Vegetal:
-                    new_tile = GameObject.Instantiate(GameManager.Instance.NeutreVegetal);
+                    if (other.gameObject.layer == 11)
+                        new_tile = Instantiate(GameManager.Instance.FeuVegetal);
+                    else if (other.gameObject.layer == 12)
+                        new_tile = Instantiate(GameManager.Instance.RocheVegetal);
+                    else if (other.gameObject.layer == 8)
+                        new_tile = Instantiate(GameManager.Instance.TerreVegetal);
+                    else if (other.gameObject.layer == 10)
+                        new_tile = Instantiate(GameManager.Instance.EauVegetal);
+                    else if (other.gameObject.layer == 13)
+                        new_tile = Instantiate(GameManager.Instance.NeutreVegetal);
+                    else
+                        return;
                     new_tile.transform.position = other.transform.position;
 
                     other.gameObject.layer = 11;
                     break;
                 case TYPE.Rock:
-                    new_tile = GameObject.Instantiate(GameManager.Instance.NeutreRock);
+                    if (other.gameObject.layer == 10)
+                        new_tile = Instantiate(GameManager.Instance.RocheEau);
+                    else if (other.gameObject.layer == 11)
+                        new_tile = Instantiate(GameManager.Instance.RocheVegetal);
+                    else if (other.gameObject.layer == 8)
+                        new_tile = Instantiate(GameManager.Instance.RocheTerre);
+                    else if (other.gameObject.layer == 13)
+                        new_tile = Instantiate(GameManager.Instance.NeutreRock);
+                    else
+                        return;
                     new_tile.transform.position = other.transform.position;
 
                     other.gameObject.layer = 12;
@@ -258,15 +308,37 @@ public class Poyoyoyo : MonoBehaviour
                     break;
             }
 
-            new_tile.transform.position += Vector3.up * 0.4f;
+            new_tile.transform.position = new Vector3(other.transform.position.x, 0.4f, other.transform.position.z);
             new_tile.transform.parent = GameObject.Find("Tiles").transform;
-            new_tile.gameObject.GetComponent<Spawner>().NavMeshAgentTypeID = _agent.agentTypeID;
-            new_tile.gameObject.GetComponent<Spawner>().enabled = true;
-            new_tile.gameObject.GetComponent<Spawner>().Element = Element;
-            Catch = false;
+            if (new_tile.TryGetComponent<Spawner>(out Spawner sp))
+            {
+                sp.enabled = true;
+                if (other.gameObject.layer != 13)
+                {
+                    switch (other.gameObject.layer)
+                    {
+                        case 8:
+                            sp.Element = new TYPE[] { Element, TYPE.Soil };
+                            break;
+                        case 9:
+                            sp.Element = new TYPE[] { Element, TYPE.Fire };
+                            break;
+                        case 10:
+                            sp.Element = new TYPE[] { Element, TYPE.Water };
+                            break;
+                        case 11:
+                            sp.Element = new TYPE[] { Element, TYPE.Vegetal };
+                            break;
+                        case 12:
+                            sp.Element = new TYPE[] { Element, TYPE.Rock };
+                            break;
+                    }
+                }
+                else
+                    sp.Element = new TYPE[] { Element };
+            }
             other.gameObject.SetActive(false);
             gameObject.SetActive(false);
-            TryFusion = false;
         }
     }
     public void Spawn(Vector3 direction)

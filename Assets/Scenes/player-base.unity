@@ -187,6 +187,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -326,6 +330,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -393,6 +401,10 @@ PrefabInstance:
     - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -599,6 +611,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -661,6 +677,10 @@ PrefabInstance:
     - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -725,6 +745,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -787,6 +811,10 @@ PrefabInstance:
     - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -868,6 +896,10 @@ PrefabInstance:
     - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -1256,6 +1288,10 @@ PrefabInstance:
     - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -1683,6 +1719,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -2095,6 +2135,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -2162,6 +2206,10 @@ PrefabInstance:
     - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -2579,6 +2627,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -2629,6 +2681,14 @@ MonoBehaviour:
   NeutreVegetal: {fileID: 8153581884895159027, guid: f5dbc260dffeeed4e99d7212c5af22d1, type: 3}
   NeutreRock: {fileID: 148510710388487025, guid: 7fdd874a18ce66d4ba0023652b81b718, type: 3}
   NeutreSoil: {fileID: 4579456090853335538, guid: 85479249c916c874ab82d714323ccc9e, type: 3}
+  EauTerre: {fileID: 3881905088932016429, guid: b11e4546706fa17459bede6ceeba7545, type: 3}
+  EauVegetal: {fileID: 9192355607958058061, guid: a3b9210c25c6bff4d88a543a10bf50b5, type: 3}
+  FeuTerre: {fileID: 337225567134076905, guid: 34eb8dd9c86dffb44ae1d43abd17d957, type: 3}
+  FeuVegetal: {fileID: 7310944867352400852, guid: 6185be3df4150e04ab164dbef7969c0e, type: 3}
+  RocheEau: {fileID: 847150448144493114, guid: 10cc90bb452784f40ab4253aacef1097, type: 3}
+  RocheTerre: {fileID: 3578407778432956021, guid: 58e4cad1485a8d2478d18c5f3c6480ba, type: 3}
+  RocheVegetal: {fileID: 8507829803274855431, guid: adc0047fb6ecd58418d2db6c9179be95, type: 3}
+  TerreVegetal: {fileID: 4522784924699473246, guid: 9b9f2de4157a18a45b50bf342cecb639, type: 3}
 --- !u!4 &776633125
 Transform:
   m_ObjectHideFlags: 0
@@ -2841,6 +2901,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -3043,6 +3107,10 @@ PrefabInstance:
     - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -3247,6 +3315,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -3425,6 +3497,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -3487,6 +3563,10 @@ PrefabInstance:
     - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -3695,6 +3775,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -3816,6 +3900,10 @@ PrefabInstance:
     - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -4053,6 +4141,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1059551468}
   - component: {fileID: 1059551467}
+  - component: {fileID: 1059551469}
   m_Layer: 0
   m_Name: GLOBAL SOUND EFFECT
   m_TagString: Untagged
@@ -4171,6 +4260,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1059551469
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059551466}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1068517032
 GameObject:
   m_ObjectHideFlags: 0
@@ -4345,6 +4447,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -4425,6 +4531,10 @@ PrefabInstance:
     - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -4585,6 +4695,10 @@ PrefabInstance:
     - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -4763,6 +4877,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -4825,6 +4943,10 @@ PrefabInstance:
     - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -4911,6 +5033,10 @@ PrefabInstance:
     - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -5192,6 +5318,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -5211,6 +5341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1374190107}
   - component: {fileID: 1374190106}
+  - component: {fileID: 1374190108}
   m_Layer: 0
   m_Name: MUSIQUE
   m_TagString: Untagged
@@ -5329,6 +5460,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1374190108
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374190105}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1381976136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5387,6 +5531,10 @@ PrefabInstance:
     - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -5450,6 +5598,10 @@ PrefabInstance:
     - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -5547,6 +5699,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -5609,6 +5765,10 @@ PrefabInstance:
     - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -5695,6 +5855,10 @@ PrefabInstance:
     - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -5839,6 +6003,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -5938,6 +6106,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -6001,6 +6173,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -6063,6 +6239,10 @@ PrefabInstance:
     - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -6382,6 +6562,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -6467,6 +6651,10 @@ PrefabInstance:
     - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -6633,6 +6821,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -6696,6 +6888,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -6758,6 +6954,10 @@ PrefabInstance:
     - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -6881,6 +7081,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -6998,6 +7202,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -7060,6 +7268,10 @@ PrefabInstance:
     - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -7124,6 +7336,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -7186,6 +7402,10 @@ PrefabInstance:
     - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -7580,6 +7800,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -7739,7 +7963,7 @@ GameObject:
   - component: {fileID: 2383493358662940869}
   m_Layer: 13
   m_Name: TILE_BASE_neutre (16)
-  m_TagString: Neutre
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7977,6 +8201,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2159429486905525033, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4769e663d533c343be0ba91fa26b62c, type: 3}
 --- !u!1 &6599065006617493836 stripped
@@ -8060,7 +8288,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -8069,7 +8297,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 5
-  MaxDistance: 500
+  MaxDistance: 350
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0

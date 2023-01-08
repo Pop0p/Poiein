@@ -31,35 +31,31 @@ public class Incubateur : MonoBehaviour
 
     public void Drop()
     {
-        if (collisionWithHand && !_playerHand.has_one && _playerHand.had_one)
-        {
-            _playerHand.Previous_Poyo.OnIncubateurIn();
-            _playerHand.Previous_Poyo.transform.position = Emplacements[_nbPoiein].position;
-            _poieinFusion[_nbPoiein] = _playerHand.Previous_Poyo.gameObject;
-            ++_nbPoiein;
-
-            if (_nbPoiein == 2)
-            {
-                StartCoroutine(Fusion());
-            }
-        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.TryGetComponent(out PlayerHand ph))
         {
-            collisionWithHand = true;
+            if (_playerHand.has_one)
+            {
+                ph.Current_Poyo.OnGrabOut();
+                ph.Current_Poyo = null;
+                ph._animator.SetBool("CATCH", false);
+                _playerHand.Previous_Poyo.OnIncubateurIn();
+                ph.has_one = false;
+                _playerHand.Previous_Poyo.transform.position = Emplacements[_nbPoiein].position;
+                _poieinFusion[_nbPoiein] = _playerHand.Previous_Poyo.gameObject;
+                ++_nbPoiein;
+
+                if (_nbPoiein == 2)
+                {
+                    StartCoroutine(Fusion());
+                }
+            }
         }
     }
 
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.TryGetComponent(out PlayerHand ph))
-        {
-            collisionWithHand = false;
-        }
-    }
 
     IEnumerator Fusion()
     {
