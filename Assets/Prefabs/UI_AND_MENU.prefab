@@ -632,7 +632,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6668999385632877039
 RectTransform:
   m_ObjectHideFlags: 0
@@ -925,6 +925,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InGame: 1
+  MenuPause: {fileID: 8096756145432030737}
 --- !u!1 &8096756144544234407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1856,13 +1857,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8096756145432030750}
+  - component: {fileID: 676750926}
   m_Layer: 5
   m_Name: UI_PAUSE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8096756145432030750
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1892,6 +1894,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &676750926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8096756145432030737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b8b1ce52e94614e9b4d6ccb2626be2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dex:
+  - {fileID: 8096756145630785604}
+  - {fileID: 8096756144558522712}
+  - {fileID: 6668999384214894283}
+  - {fileID: 8096756144857655820}
+  - {fileID: 8096756145682588424}
 --- !u!1 &8096756145451917418
 GameObject:
   m_ObjectHideFlags: 0
