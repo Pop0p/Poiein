@@ -111,7 +111,7 @@ public class Incubateur : MonoBehaviour
             GameObject g = Instantiate(TypePoiein[index]);
             g.transform.position = Retour.position;
             g.GetComponent<Poyoyoyo>().OnIncubateurOut();
-
+            g.transform.parent = GameObject.Find("Poiens").transform;
 
             _poieinFusion[0].SetActive(false);
             _poieinFusion[1].SetActive(false);

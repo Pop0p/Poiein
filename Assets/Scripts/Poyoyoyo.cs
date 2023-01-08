@@ -124,6 +124,7 @@ public class Poyoyoyo : MonoBehaviour
                 child.GetComponent<Poyoyoyo>().Catch = false;
                 child.GetComponent<Poyoyoyo>()._owner = null;
                 child.GetComponent<Poyoyoyo>()._grabed = false;
+                child.transform.parent = GameObject.Find("Poiens").transform;
 
             }
             transform.localScale = Vector3.one * 0.75f;
