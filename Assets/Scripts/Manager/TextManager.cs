@@ -75,13 +75,12 @@ public class TextManager : MonoBehaviour
             }
         }
 
-        Debug.Log("count : " + _count);
         if (_count == _len && !_affich_all)
         {
             // afficher le text
-            gText.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Dans leur orgueil, ils ont appelé la mission « poiéin », du verbe « créer » en grec ancien.N’est - ce pas le plus grand des orgueils de se croire créateur et démiurge quand on détruit tout ? \n " +
-                                                        "Et moi… Je me souviens maintenant. Je n’étais qu’un outil. Simple robot outil qui a survécu à l’humain.Simple robot qui doit reconstruire le monde. \n" +
-                                                        "Ce n’est qu’un début.";
+            gText.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "In their pride, they called the mission “poiein”, from the verb “to create” in ancient Greek. Isn't it the greatest pride to believe oneself creator and demiurge when one destroys everything? \n " +
+                                                        "And I... I remember now. I was just a tool. Simple robot tool that has survived the human. Simple robot who must rebuild the world. \n" +
+                                                        "And it's only a beginning.";
 
             gText.SetActive(true);
             _affich_all = true;
@@ -89,7 +88,7 @@ public class TextManager : MonoBehaviour
         else if (_count >= _troisQuart && !_affich_troisQuart)
         {
             // afficher le text
-            gText.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Oui, c’est ça. Le monde chutait… L’épuisement des ressources était inévitable. Les humains ne pouvaient pas se résoudre à disparaître. Ils créèrent des petites créatures capables de se reproduire à l’infini. Des créatures remplies des ressources naturelles qui s’épuisaient.";
+            gText.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Yes that's it. The world was falling… Resource depletion was inevitable. Humans couldn't bring themselves to disappear. They created small creatures capable of infinite reproduction. Creatures filled with natural resources that were running out.";
             gText.SetActive(true);
             _affich_troisQuart = true;
 
@@ -97,15 +96,14 @@ public class TextManager : MonoBehaviour
         else if (_count >= _demi && !_affich_demi)
         {
             // afficher le text
-            gText.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Un laboratoire… grouillant de petites créatures élémentaires. De toutes les couleurs, de toutes les tailles, comme celles-ci. Mais pourquoi étaient-elles là ? Que sont-elles ? Et quel était mon rôle ?";
+            gText.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "A laboratory… crawling with small elemental creatures. All colors, all sizes, like these ones. But why these things were there? What are they? And what was my role?";
             gText.SetActive(true);
             _affich_demi = true;
         }
         else if (_count >= _quart && !_affich_quart)
         {
-            Debug.Log("quart atteins");
             // afficher le text
-            gText.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Ces petits êtres qui grouillent… Ils me rappellent vaguement quelque chose. Je me souviens… une pièce étroite aux murs métalliques… des blouses blanches… des fioles. Un laboratoire !";
+            gText.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "These little beings that swarm… They vaguely remind me of something. I remember…a narrow room with metal walls…white coats…vials. A laboratory !";
             Debug.Log(gText.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text);
             gText.SetActive(true);
             Debug.Log(gText.activeInHierarchy);
@@ -113,11 +111,8 @@ public class TextManager : MonoBehaviour
         }
 
         _count = 0;
-        Debug.Log("temps");
         yield return new WaitForSeconds(10f);
-        Debug.Log("temps écoulé coucou");
         gText.SetActive(false);
-        Debug.Log(gText.activeInHierarchy);
         _check = true;
     }
 }
