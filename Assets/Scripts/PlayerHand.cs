@@ -11,9 +11,11 @@ public class PlayerHand : MonoBehaviour
 
     private Animator _animator;
 
-    Poyoyoyo Highlighted = null;
-    [SerializeField] bool has_one = false;
+    public bool has_one = false;
+    public bool had_one = false;
     bool must_throw = false;
+    public Poyoyoyo Current_Poyo;
+    public Poyoyoyo Previous_Poyo;
 
     Vector3 MoveVelocity = Vector3.zero;
 
@@ -25,24 +27,24 @@ public class PlayerHand : MonoBehaviour
     {
         if (GameManager.Instance.InPause)
             return;
-        if (Highlighted != null)
+        if (Current_Poyo != null)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 if (!has_one)
                 {
-                    Highlighted.Catch = true;
-                    Highlighted.OnGrabIn(gameObject.transform);
+                    Current_Poyo.Catch = true;
+                    Current_Poyo.OnGrabIn(gameObject.transform);
                     has_one = true;
                     _animator.SetBool("CATCH", true);
                 }
                 else
                 {
-                    Highlighted.Catch = false;
+                    Current_Poyo.Catch = false;
                     has_one = false;
-                    Highlighted.OnGrabOut();
+                    Current_Poyo.OnGrabOut();
                     _animator.SetBool("CATCH", false);
-                    //Highlighted = null;
+                    //Current_Poyo = null;
                 }
             }
             if (Input.GetMouseButtonDown(1))
@@ -52,15 +54,19 @@ public class PlayerHand : MonoBehaviour
             }
         }
 
+        if (had_one && !has_one)
+            GameObject.FindGameObjectWithTag("Incubateur").GetComponent<Incubateur>().Drop();
 
+        had_one = has_one;
+        Previous_Poyo = Current_Poyo;
     }
 
     private void FixedUpdate()
     {
         if (GameManager.Instance.InPause)
             return;
-        if (Highlighted != null)
-            Highlighted.OnArmOut();
+        if (Current_Poyo != null)
+            Current_Poyo.OnArmOut();
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layerMask))
@@ -68,19 +74,21 @@ public class PlayerHand : MonoBehaviour
             transform.position = Vector3.SmoothDamp(transform.position, hit.point + Vector3.up * 2.5f, ref MoveVelocity, SmoothTime);
             if (hit.transform.gameObject.layer == 7 && hit.transform.TryGetComponent(out Poyoyoyo c) && !has_one)
             {
-                Highlighted = c;
-                Highlighted.OnArmIn();
+                Current_Poyo = c;
+                Current_Poyo.OnArmIn();
             } else if (!has_one)
             {
-                Highlighted = null;
+                Current_Poyo = null;
             }
         }
 
-        if (Highlighted != null && must_throw && has_one)
+        if (Current_Poyo != null && must_throw && has_one)
         {
             has_one = false;
-            Highlighted.OnThrow();
+            Current_Poyo.OnThrow();
             must_throw = false;
         }
     }
+
+
 }

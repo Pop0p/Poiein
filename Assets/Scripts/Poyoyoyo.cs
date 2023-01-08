@@ -31,6 +31,7 @@ public class Poyoyoyo : MonoBehaviour
 
     private bool _splashing;
     private bool _unSplashing;
+    private bool _inIncubateur;
 
     private void Awake()
     {
@@ -48,11 +49,7 @@ public class Poyoyoyo : MonoBehaviour
                 yield return new WaitForSeconds(Random.Range(4, 16));
                 if (_owner == null && _rb.velocity.y == 0)
                 {
-                    _rb.velocity = _agent.velocity;
-                    _agentHadPath = _agent.hasPath;
-                    _agentDestination = _agent.destination;
-                    _agent.enabled = false;
-                    _rb.AddForce(Vector3.up * Random.Range(4, 9), ForceMode.Impulse);
+                    DoJump(false);
                 }
             }
         }
@@ -83,13 +80,25 @@ public class Poyoyoyo : MonoBehaviour
             _currentTime = 0;
         }
 
-        if (_rb.velocity.y != 0)
+        if (_rb.velocity.y <= -3)
         {
-            float yScale = Mathf.Lerp(1, 2f, Mathf.Abs(_rb.velocity.y) / 8);
-            transform.localScale = new Vector3(1 / yScale, yScale, 1);
+            float size = isTiny ? 0.75f : 1;
+            float yScale = Mathf.Lerp(size, size * 2, Mathf.Abs(_rb.velocity.y) / 8);
+            transform.localScale = new Vector3(size / yScale, yScale, size);
         }
     }
 
+    private void DoJump(bool dir)
+    {
+        _rb.velocity = _agent.velocity;
+        _agentHadPath = _agent.hasPath;
+        _agentDestination = _agent.destination;
+        _agent.enabled = false;
+        if (dir)
+            _rb.AddForce(Vector3.forward + Random.insideUnitSphere * 4 + transform.up * 2, ForceMode.Impulse);
+        else
+            _rb.AddForce(Vector3.up * Random.Range(4, 9), ForceMode.Impulse);
+    }
     private void FixedUpdate()
     {
         _previousVelocity = _rb.velocity;
@@ -119,6 +128,7 @@ public class Poyoyoyo : MonoBehaviour
             }
             transform.localScale = Vector3.one * 0.75f;
             hasSplitted = true;
+            isTiny = true;
         }
 
 
@@ -145,9 +155,28 @@ public class Poyoyoyo : MonoBehaviour
         _owner = null;
         _rb.AddForce(transform.up * -10, ForceMode.Impulse);
     }
-    
+    public void OnIncubateurIn()
+    {
+        _rb.isKinematic = true;
+        _agentHadPath = _agent.hasPath;
+        _agentDestination = _agent.destination;
+        _agent.enabled = false;
+        _inIncubateur = true;
+    }
+    public void OnIncubateurOut()
+    {
+        _rb.isKinematic = false;
+        _agent.enabled = true;
+        if (_agentHadPath && _agent.isOnNavMesh)
+            _agent.destination = _agentDestination;
+        _inIncubateur = false;
+        DoJump(true);
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
+        if (_inIncubateur)
+            return;
         if (collision.transform.TryGetComponent(out Poyoyoyo comp) && _previousVelocity.y < 0)
         {
             _rb.AddForce(Random.insideUnitSphere * 2 + transform.up * 2, ForceMode.Impulse);
@@ -225,8 +254,8 @@ public class Poyoyoyo : MonoBehaviour
             yield return null;
         float current = 0;
         float duration = Random.Range(0.25f, .35f);
-        float x_splash = Random.Range(1.4f, 2.8f);
-        float z_splash = Random.Range(1.4f, 2.8f);
+        float x_splash = isTiny ? Random.Range(.8f, 1.4f) : Random.Range(1.4f, 2.8f);
+        float z_splash = isTiny ? Random.Range(.8f, 1.4f) : Random.Range(1.4f, 2.8f);
         Vector3 begin = transform.localScale;
 
         while (true)
@@ -256,10 +285,13 @@ public class Poyoyoyo : MonoBehaviour
         Vector3 begin = transform.localScale;
         while (true)
         {
-            transform.localScale = Vector3.Lerp(begin, Vector3.one, current / duration);
+            transform.localScale = Vector3.Lerp(begin, isTiny ? (Vector3.one * 0.75f) : Vector3.one, current / duration);
             current += Time.deltaTime;
             if (current > duration)
+            {
+                transform.localScale = isTiny ? (Vector3.one * 0.75f) : Vector3.one;
                 break;
+            }
             _unSplashing = true;
             yield return null;
         }

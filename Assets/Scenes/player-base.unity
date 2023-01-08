@@ -1916,6 +1916,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FIRE
       objectReference: {fileID: 0}
+    - target: {fileID: 4979067923031759888, guid: f66a124e1a7ea3640b6ffbd40399e8b4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5643823189116700330, guid: f66a124e1a7ea3640b6ffbd40399e8b4, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -3117,6 +3121,10 @@ PrefabInstance:
     - target: {fileID: 8592164128266435083, guid: f98a0d5fec3cf2a4dabbb677f87b8ddf, type: 3}
       propertyPath: m_Name
       value: SOIL
+      objectReference: {fileID: 0}
+    - target: {fileID: 8592164128266435083, guid: f98a0d5fec3cf2a4dabbb677f87b8ddf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8968548589695197361, guid: f98a0d5fec3cf2a4dabbb677f87b8ddf, type: 3}
       propertyPath: m_RootOrder
@@ -4960,11 +4968,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1398804451777146091, guid: 80321c4d6cb7a624cb2a91d38972aabb, type: 3}
       propertyPath: m_Size.x
-      value: 4
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398804451777146091, guid: 80321c4d6cb7a624cb2a91d38972aabb, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1398804451777146091, guid: 80321c4d6cb7a624cb2a91d38972aabb, type: 3}
       propertyPath: m_Size.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398804451777146091, guid: 80321c4d6cb7a624cb2a91d38972aabb, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1398804451777146092, guid: 80321c4d6cb7a624cb2a91d38972aabb, type: 3}
       propertyPath: m_IsKinematic
@@ -4972,6 +4988,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1398804451777146093, guid: 80321c4d6cb7a624cb2a91d38972aabb, type: 3}
       propertyPath: m_Name
+      value: Incubateur
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398804451777146093, guid: 80321c4d6cb7a624cb2a91d38972aabb, type: 3}
+      propertyPath: m_TagString
       value: Incubateur
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5388,7 +5408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1484707752}
   - component: {fileID: 1484707753}
-  m_Layer: 5
+  m_Layer: 14
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7602,7 +7622,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3658057430213073828}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: crochet_gauche.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7687,7 +7707,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6992382986634995361}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: crochet_droit.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7706,9 +7726,10 @@ GameObject:
   - component: {fileID: 1012368354851269731}
   - component: {fileID: 1012368354851269733}
   - component: {fileID: 1012368354851269732}
-  m_Layer: 0
+  - component: {fileID: 1012368354851269734}
+  m_Layer: 14
   m_Name: Pince_v01
-  m_TagString: Untagged
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7742,9 +7763,9 @@ BoxCollider:
   m_GameObject: {fileID: 1012368354851269730}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.2, y: 2, z: 1.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1012368354851269733
 MonoBehaviour:
@@ -7760,6 +7781,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SmoothTime: 0.05
   has_one: 0
+  had_one: 0
+  Current_Poyo: {fileID: 0}
+  Previous_Poyo: {fileID: 0}
+--- !u!54 &1012368354851269734
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012368354851269730}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!4 &2010074950861455190
 Transform:
   m_ObjectHideFlags: 0
@@ -7800,7 +7840,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6602000403864204394}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: crochet_droit.l_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9567,7 +9607,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6891499902294750034}
   - component: {fileID: 3613522228061804087}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Cylinder.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9583,7 +9623,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4979450899768024118}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: crochet_gauche-2.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9615,7 +9655,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2010074950861455190}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: crochet_droit2.l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9662,7 +9702,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6454732058273973546}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9693,7 +9733,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3456420354066998709}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: crochet_gauche.l_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9725,7 +9765,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8788671704208123462}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9759,7 +9799,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2077338345350906879}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Bone_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
