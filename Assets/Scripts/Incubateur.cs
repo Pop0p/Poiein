@@ -34,7 +34,7 @@ public class Incubateur : MonoBehaviour
             _playerHand.Previous_Poyo.OnIncubateurIn();
             _playerHand.Previous_Poyo.transform.position = Emplacements[_nbPoiein].position;
             _poieinFusion[_nbPoiein] = _playerHand.Previous_Poyo.gameObject;
-           ++_nbPoiein;
+            ++_nbPoiein;
 
             if (_nbPoiein == 2)
             {
@@ -48,7 +48,6 @@ public class Incubateur : MonoBehaviour
         if (collision.gameObject.TryGetComponent(out PlayerHand ph))
         {
             collisionWithHand = true;
-            Debug.Log("Collision");
         }
     }
 
@@ -57,47 +56,46 @@ public class Incubateur : MonoBehaviour
         if (collision.gameObject.TryGetComponent(out PlayerHand ph))
         {
             collisionWithHand = false;
-            Debug.Log("Out");
         }
     }
 
     IEnumerator Fusion()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(.75f);
         TYPE element1 = _poieinFusion[0].GetComponent<Poyoyoyo>().Element;
         TYPE element2 = _poieinFusion[1].GetComponent<Poyoyoyo>().Element;
 
         int index = -1;
 
-
-        //switch (element1)
-        //{
-        //    case TYPE.Fire:
-        //        if (element2 == TYPE.Soil)
-        //        {
-        //            index = 4;
-        //        }
-        //        break;
-        //    case TYPE.Water:
-        //        if (element2 == TYPE.Soil)
-        //        {
-        //            index = 4;
-        //        }
-        //        break;
-        //    case TYPE.Soil:
-        //        if (element2 == TYPE.Water)
-        //        {
-        //            index = 4;
-        //        }
-        //        else if (element2 == TYPE.Fire)
-        //        {
-        //            index = 2;
-        //        }
-        //        break;
-        //    default:
-        //        Debug.Log("Pas bon");
-        //        break;
-        //}
+        // EAU + SOIL = VEGETAL
+        // EAU + FIRE = ROCK
+        // SOIL + FIRE = ROCK
+        // FIRE + VEGETAL = SOIL
+        switch (element1)
+        {
+            case TYPE.Water:
+                if (element2 == TYPE.Soil)
+                    index = 4;
+                else if (element2 == TYPE.Fire)
+                    index = 2;
+                break;
+            case TYPE.Soil:
+                if (element2 == TYPE.Water)
+                    index = 4;
+                else if (element2 == TYPE.Fire)
+                    index = 2;
+                break;
+            case TYPE.Fire:
+                if (element2 == TYPE.Water || element2 == TYPE.Soil)
+                    index = 2;
+                if (element2 == TYPE.Vegetal)
+                    index = 1;
+                break;
+            case TYPE.Vegetal:
+                if (element2 == TYPE.Fire)
+                    index = 1;
+                break;
+        }
 
         if (index == -1)
         {
@@ -112,10 +110,13 @@ public class Incubateur : MonoBehaviour
         {
             GameObject g = Instantiate(TypePoiein[index]);
             g.transform.position = Retour.position;
-            g.SetActive(true);
+            g.GetComponent<Poyoyoyo>().OnIncubateurOut();
+
 
             _poieinFusion[0].SetActive(false);
             _poieinFusion[1].SetActive(false);
+            _poieinFusion[0] = null;
+            _poieinFusion[1] = null;
             _nbPoiein = 0;
         }
     }
