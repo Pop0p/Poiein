@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/FIRE.prefab.meta
+guid: 80321c4d6cb7a624cb2a91d38972aabb
+========
+guid: 5252c9eb0d8c4374889af771484beb48
+>>>>>>>> feat-incubateur:Assets/Prefabs/Incubateur.prefab.meta
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
